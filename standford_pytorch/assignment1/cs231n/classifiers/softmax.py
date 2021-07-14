@@ -33,11 +33,14 @@ def softmax_loss_naive(W, X, y, reg):
     # regularization!                                                           #
     #############################################################################
     # *****START OF YOUR CODE (DO NOT DELETE/MODIFY THIS LINE)*****
-
+    #weight에서 class수 받고
+    #X에서 train 유닛수 받고
     num_classes = W.shape[1]
     num_train = X.shape[0]
     
     for i in range(num_train):
+        #dot 연산 처리하고
+        #max인 값들을 전부 빼준다
         scoress = X[i].dot(W)
         scores -= np.max(scores)
         
